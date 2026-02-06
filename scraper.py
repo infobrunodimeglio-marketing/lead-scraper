@@ -65,7 +65,7 @@ class LeadScraper:
         """
         Orchestrate the search and extraction.
         """
-        query = f'"{activity}" "{problem}"'
+        query = f'{activity} {problem}'
         if sites:
             site_list = [s.strip() for s in sites.split(',')]
             # Constructing a site: operator query might be too long if many sites.
@@ -120,3 +120,4 @@ if __name__ == "__main__":
     scraper = LeadScraper()
     df = scraper.process_leads("Ristorante", "cercasi cameriere", max_results=5)
     print(df)
+
